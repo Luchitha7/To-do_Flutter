@@ -7,15 +7,18 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[200],
+      backgroundColor: Colors.blue[200],
       appBar: AppBar(
-        title: Text('To Do'),
+        title: Text('To Do', style: TextStyle(fontWeight: FontWeight.w600)),
+        centerTitle: true,
+        backgroundColor: Colors.blue[400],
+        elevation: 0,
       ),
       body: ListView(
         children: [
-          ToDoTile(),
-        ]
-      )
+          const ToDoTile(),
+        ],
+      ),
     );
   }
 }
