@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blue[200],
       appBar: AppBar(
-        title: Text('To Do'),
+        title: Text('To Do', style: TextStyle(fontWeight: FontWeight.w600)), centerTitle: true, backgroundColor: Colors.blue[400],
         elevation: 0,
       ),
       body: ListView(
