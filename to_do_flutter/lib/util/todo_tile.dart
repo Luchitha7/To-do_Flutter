@@ -9,7 +9,23 @@ class ToDoTile extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: Container(
         padding: const EdgeInsets.only(left: 16),
-        child: Text("Make Tutorial", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),),
+        child: Row(
+          children: [
+
+              //Checkbox
+              Checkbox(value: false, onChanged: (value) {}),
+              
+
+
+
+
+            //Task Name
+            Text(
+              "Make Tutorial",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+            ),
+          ],
+        ),
         decoration: BoxDecoration(
           color: Colors.grey[200],
           borderRadius: BorderRadius.circular(12),
@@ -19,4 +35,3 @@ class ToDoTile extends StatelessWidget {
   }
 }
 
-//test 
