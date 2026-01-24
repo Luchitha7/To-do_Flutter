@@ -17,6 +17,11 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           const ToDoTile(),
+          const ToDoTile(),
+          const ToDoTile(),
+          const ToDoTile(),
+          const ToDoTile(),
+          const ToDoTile(),
         ],
       ),
     );
