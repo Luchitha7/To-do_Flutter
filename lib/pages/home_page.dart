@@ -1,8 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_flutter/util/todo_tile.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  List todoList = [
+    ["Buy groceries", false],
+    ["Workout", false],
+    ["Read a book", true],
+  ];
+
+  void checkBoxChanged(bool? value, int index) {
+    setState(() {
+      todoList[index][1] = value ?? false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,15 +31,15 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.blue[400],
         elevation: 0,
       ),
-      body: ListView(
-        children: [
-          const ToDoTile(),
-          const ToDoTile(),
-          const ToDoTile(),
-          const ToDoTile(),
-          const ToDoTile(),
-          const ToDoTile(),
-        ],
+      body: ListView.builder(
+        itemCount: todoList.length,
+        itemBuilder: (context, index) {
+          return ToDoTile(
+            taskName: todoList[index][0],
+            taskCompleted: todoList[index][1],
+            onChanged: (value) => checkBoxChanged(value, index),
+          );
+        },
       ),
     );
   }
