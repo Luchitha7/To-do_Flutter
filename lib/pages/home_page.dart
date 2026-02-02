@@ -21,6 +21,17 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+//Creating a new task 
+
+void createNewTask(){
+  showDialog(
+  context: context, 
+  builder: (context) {
+    return AlertDialog();
+  },
+  );
+}  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,6 +41,12 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         backgroundColor: Colors.blue[400],
         elevation: 0,
+      ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: createNewTask,
+        child: Icon(Icons.add),
+        
       ),
       body: ListView.builder(
         itemCount: todoList.length,
