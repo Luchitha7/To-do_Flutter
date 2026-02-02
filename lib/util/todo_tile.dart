@@ -6,9 +6,9 @@ class ToDoTile extends StatelessWidget {
 
   final String taskName;
   final bool taskCompleted;
-  Function(bool?)? onChanged;
+  final Function(bool?)? onChanged;
 
-  const ToDoTile({super.key, 
+  ToDoTile({super.key, 
   required this.taskName, 
   required this.taskCompleted, 
   required this.onChanged});
@@ -19,21 +19,19 @@ class ToDoTile extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: Container(
         padding: const EdgeInsets.only(left: 16),
+        decoration: BoxDecoration(
+          color: Colors.grey[200],
+          borderRadius: BorderRadius.circular(12),
+        ),
         child: Row(
           children: [
-
-              //Checkbox
-              Checkbox(value: taskCompleted, onChanged: (value) {}),
+            Checkbox(value: taskCompleted, onChanged: onChanged),
             //Task Name
             Text(
               taskName,
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             ),
           ],
-        ),
-        decoration: BoxDecoration(
-          color: Colors.grey[200],
-          borderRadius: BorderRadius.circular(12),
         ),
       ),
     );
