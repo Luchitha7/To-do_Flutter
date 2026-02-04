@@ -74,11 +74,19 @@ void createNewTask(){
         elevation: 0,
       ),
 
-      floatingActionButton: FloatingActionButton(
-        onPressed: createNewTask,
-        child: Icon(Icons.add),
-        
-      ),
+      floatingActionButton: FloatingActionButton.extended(
+  onPressed: createNewTask,
+  backgroundColor: Colors.blue[600],
+  elevation: 6,
+  icon: const Icon(Icons.add, color: Colors.white),
+  label: const Text(
+    "Add task",
+    style: TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
+  ),
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(16),
+  ),
+),
       body: ListView.builder(
         itemCount: todoList.length,
         itemBuilder: (context, index) {

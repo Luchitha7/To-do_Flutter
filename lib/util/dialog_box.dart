@@ -16,36 +16,48 @@ class DialogBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-        backgroundColor: Colors.blue[300],
-        content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-            //get user inputs
+      backgroundColor: Colors.white,
+      elevation: 10,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(18),
+      ),
+      insetPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+      titlePadding: const EdgeInsets.fromLTRB(20, 18, 20, 0),
+      contentPadding: const EdgeInsets.fromLTRB(20, 12, 20, 0),
+      actionsPadding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
+      title: const Text(
+        "New task",
+        style: TextStyle(fontWeight: FontWeight.w700),
+      ),
+      content: SizedBox(
+        width: 360, // gives a nice consistent dialog width
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
             TextField(
-                controller: controller,
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: "Enter new task",
-                ),//end of decoration
+              controller: controller,
+              textInputAction: TextInputAction.done,
+              onSubmitted: (_) => onSave(),
+              decoration: InputDecoration(
+                hintText: "Enter your task...",
+                filled: true,
+                fillColor: const Color(0xFFF4F6F8),
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(14),
+                  borderSide: BorderSide.none,
+                ),
+              ),
             ),
-
-            //buttons -> save new task
-            Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children:[
-                    //save new task button
-                    MyButton(text: "Save", onPressed: onSave),
-
-
-
-                    const SizedBox(width: 8),
-
-
-                    //cancel button
-                    MyButton(text: "Cancel", onPressed: onCancel),
-                ],
-            ),
-            ]),//end of column
+          ],
+        ),
+      ),
+      actions: [
+        MyButton(text: "Cancel", onPressed: onCancel),
+        const SizedBox(width: 8),
+        MyButton(text: "Save", onPressed: onSave),
+      ],
     );//end of alert dialog
   }
 }
