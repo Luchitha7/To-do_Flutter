@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_flutter/util/todo_tile.dart';
+import 'package:to_do_flutter/util/dialog_box.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -9,6 +10,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  //text editing controller
+  final controller = TextEditingController();
   List todoList = [
     ["Buy groceries", false],
     ["Workout", false],
@@ -21,16 +25,43 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void saveNewTask() {
+    final text = controller.text.trim();
+    if (text.isEmpty) return;
+
+    setState(() {
+      todoList.add([text, false]);
+    });
+
+    controller.clear();
+    Navigator.of(context).pop();
+  }
+
+  void cancelNewTask() {
+    controller.clear();
+    Navigator.of(context).pop();
+  }
+
 //Creating a new task 
 
 void createNewTask(){
   showDialog(
   context: context, 
   builder: (context) {
-    return AlertDialog();
+    return DialogBox(
+      controller: controller,
+      onSave: saveNewTask,
+      onCancel: cancelNewTask,
+    );
   },
   );
 }  
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
