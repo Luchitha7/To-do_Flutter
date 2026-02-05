@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_flutter/util/todo_tile.dart';
 import 'package:to_do_flutter/util/dialog_box.dart';
+import 'package:to_do_flutter/data/database.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,23 +12,36 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  //text editing controller
+  // database
+  final ToDoDatabase db = ToDoDatabase();
+
+  // text editing controller
   final controller = TextEditingController();
-  List todoList = [
-    ["Buy groceries", false],
-    ["Workout", false],
-    ["Read a book", true],
-  ];
+
+  @override
+  void initState() {
+    super.initState();
+    // if there is no data, create initial data
+    if (db.myBox.get("TODOLIST") == null) {
+      db.createInitialData();
+      db.updateDatabase();
+    } else {
+      // there is existing data
+      db.loadData();
+    }
+  }
 
   void checkBoxChanged(bool? value, int index) {
     setState(() {
-      todoList[index][1] = value ?? false;
+      db.todoList[index][1] = value ?? false;
+      db.updateDatabase();
     });
   }
 
   void deleteTask(int index) {
     setState(() {
-      todoList.removeAt(index);
+      db.todoList.removeAt(index);
+      db.updateDatabase();
     });
   }
 
@@ -36,7 +50,8 @@ class _HomePageState extends State<HomePage> {
     if (text.isEmpty) return;
 
     setState(() {
-      todoList.add([text, false]);
+      db.todoList.add([text, false]);
+      db.updateDatabase();
     });
 
     controller.clear();
@@ -94,10 +109,10 @@ void createNewTask(){
   ),
 ),
       body: ListView.builder(
-        itemCount: todoList.length,
+        itemCount: db.todoList.length,
         itemBuilder: (context, index) {
           return Dismissible(
-            key: ValueKey(todoList[index][0] + index.toString()),
+            key: ValueKey(db.todoList[index][0] + index.toString()),
             direction: DismissDirection.endToStart,
             background: Container(
               alignment: Alignment.centerRight,
@@ -117,8 +132,8 @@ void createNewTask(){
               deleteTask(index);
             },
             child: ToDoTile(
-              taskName: todoList[index][0],
-              taskCompleted: todoList[index][1],
+              taskName: db.todoList[index][0],
+              taskCompleted: db.todoList[index][1],
               onChanged: (value) => checkBoxChanged(value, index),
             ),
           );
