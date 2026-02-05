@@ -32,7 +32,7 @@ class _LandingPageState extends State<LandingPage>
 
     _controller.forward();
 
-    // Navigate to home page after 3 seconds
+    //Navigate to home page after 3 seconds
     Future.delayed(const Duration(seconds: 3), () {
       if (mounted) {
         Navigator.of(context).pushReplacement(
@@ -69,26 +69,12 @@ class _LandingPageState extends State<LandingPage>
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      // Logo placeholder - replace with your actual logo asset
-                      Container(
-                        width: 120,
-                        height: 120,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.blue.withValues(alpha: 0.3),
-                              blurRadius: 20,
-                              offset: const Offset(0, 10),
-                            ),
-                          ],
-                        ),
-                        child: const Icon(
-                          Icons.check_circle,
-                          size: 70,
-                          color: Colors.blue,
-                        ),
+                      // Logo image
+                      Image.asset(
+                        'assets/images/logo.png',
+                        width: 500,
+                        height: 500,
+                        fit: BoxFit.contain,
                       ),
                       const SizedBox(height: 30),
                       // App name
