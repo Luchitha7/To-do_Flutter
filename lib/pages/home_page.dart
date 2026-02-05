@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_flutter/util/todo_tile.dart';
+import 'package:to_do_flutter/util/dialog_box.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -9,6 +10,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  //text editing controller
+  final controller = TextEditingController();
   List todoList = [
     ["Buy groceries", false],
     ["Workout", false],
@@ -21,6 +25,50 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void deleteTask(int index) {
+    setState(() {
+      todoList.removeAt(index);
+    });
+  }
+
+  void saveNewTask() {
+    final text = controller.text.trim();
+    if (text.isEmpty) return;
+
+    setState(() {
+      todoList.add([text, false]);
+    });
+
+    controller.clear();
+    Navigator.of(context).pop();
+  }
+
+  void cancelNewTask() {
+    controller.clear();
+    Navigator.of(context).pop();
+  }
+
+//Creating a new task 
+
+void createNewTask(){
+  showDialog(
+  context: context, 
+  builder: (context) {
+    return DialogBox(
+      controller: controller,
+      onSave: saveNewTask,
+      onCancel: cancelNewTask,
+    );
+  },
+  );
+}  
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,13 +79,48 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.blue[400],
         elevation: 0,
       ),
+
+      floatingActionButton: FloatingActionButton.extended(
+  onPressed: createNewTask,
+  backgroundColor: Colors.blue[600],
+  elevation: 6,
+  icon: const Icon(Icons.add, color: Colors.white),
+  label: const Text(
+    "Add task",
+    style: TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
+  ),
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(16),
+  ),
+),
       body: ListView.builder(
         itemCount: todoList.length,
         itemBuilder: (context, index) {
-          return ToDoTile(
-            taskName: todoList[index][0],
-            taskCompleted: todoList[index][1],
-            onChanged: (value) => checkBoxChanged(value, index),
+          return Dismissible(
+            key: ValueKey(todoList[index][0] + index.toString()),
+            direction: DismissDirection.endToStart,
+            background: Container(
+              alignment: Alignment.centerRight,
+              padding: const EdgeInsets.only(right: 20),
+              margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Icon(
+                Icons.delete,
+                color: Colors.white,
+                size: 30,
+              ),
+            ),
+            onDismissed: (direction) {
+              deleteTask(index);
+            },
+            child: ToDoTile(
+              taskName: todoList[index][0],
+              taskCompleted: todoList[index][1],
+              onChanged: (value) => checkBoxChanged(value, index),
+            ),
           );
         },
       ),
