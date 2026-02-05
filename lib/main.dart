@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/home_page.dart';
+import 'pages/landing_page.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async{
@@ -20,7 +20,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const LandingPage(),
       theme: ThemeData(
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.blue,

@@ -1,7 +1,7 @@
 import 'package:hive_flutter/hive_flutter.dart';
 
 class ToDoDatabase {
-ç  // list of todo tasks in memory
+  // list of todo tasks in memory
   List todoList = [];
 
   // reference to the Hive box (already opened in main)
