@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		z+Cm5/Q05hGfg4IoLFOnnSuNEdI=
+		ry0Qz47z6A4Arvno0HLVa7/smeY=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		sHB6Vh45VcFYzwWdDPsGlWWBdtk=
+		M8eXjpu5feV4h+O0vDTEOuM44rs=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
@@ -66,11 +66,11 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		EH+7pqzzyPBbZxRgRj6kXbztuqQ=
+		1ISe6k5fRAv5X+yMnXP+J/JbIiI=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NativeAssetsManifest.json</key>
 		<data>
-		re4p7E8rPLLsN+wzaPN/+AVpXTY=
+		BASHf/14q0VcgmnKtkQLt+qMEqo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		BfKzwZvwD01AunlxOvWfI01hWbE=
+		QQ5s4L0QEY/5Uj5o8JaZlV20mLY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
@@ -196,9 +196,21 @@
 		<data>
 		ipm8hg7aB3LzsfShJfpNR0QQ4hw=
 		</data>
+		<key>Frameworks/objective_c.framework/Info.plist</key>
+		<data>
+		NmRgi5QDo7jYvM4pVNN/ecIQTKI=
+		</data>
+		<key>Frameworks/objective_c.framework/_CodeSignature/CodeResources</key>
+		<data>
+		x9Ub5VC+/WxsgpgWSc+NKKHJ6fA=
+		</data>
+		<key>Frameworks/objective_c.framework/objective_c</key>
+		<data>
+		tiNeqQehnPoNW/z6OM6kIpeBwgA=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		wLfIApY1dG201TvLa7D8B3CXHWw=
+		Q9/IGKJC1i5BqIT1GkGhI+/3l+U=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -206,7 +218,7 @@
 		</data>
 		<key>Runner.debug.dylib</key>
 		<data>
-		zE5du4LeOm8uPvBiHkQ9QW1rQ1s=
+		63BNAxAzJhxbEbjeLYqgQXHPoWQ=
 		</data>
 		<key>__preview.dylib</key>
 		<data>
@@ -289,7 +301,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tA9JR3bqWnbbX1CsPkM7PwcjnlY94y6prkW2d0SSE/A=
+			gEi3KpDBF0ePu4Fvn+IyzRN1tG//Y4DmVogF6I0C63Y=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -303,7 +315,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yrUHlDl9Honj3LyT/fIUnqbEsAterCN1OHPoogKD6U0=
+			cEwzvSoEmcFppjFDqI2o8m/kqIelkASSn5sS/sOVo8w=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
@@ -324,14 +336,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ik7wcSMQuGl1J/AQmyWTZ9uZvEdxes0cIFkOfg787PY=
+			Hei3WE1KVptX9wChtblkWhrqWzTpqHKhM0gaZGoWpH4=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/NativeAssetsManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lUijHkoEgTXB2U+Rkyi/tirix7s8q5ZVfHlB2ql3dss=
+			Ylst3tzkLj0hjOuIabyRGejeqGUKbLJKt3nVAIBVsUE=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -352,7 +364,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			f670gvhSQM3L0n/gWyNNRGChwQD0yeXPsskbNSdHvCo=
+			kZ4Yb+X8+2Q1h0pqNc+UDKvGxeqcCUNdnUdcLp8Gsjw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/shaders/ink_sparkle.frag</key>
@@ -551,11 +563,32 @@
 			wSU3Ai74GJkae/7UGnbY1q6WL/vA5lEax2Kl0IRef3w=
 			</data>
 		</dict>
+		<key>Frameworks/objective_c.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4KQkxEgehkybW6OlWExJcajTXtL6WLqbRdXNa+zJ/Fc=
+			</data>
+		</dict>
+		<key>Frameworks/objective_c.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			aK1bl7i2SvWNhO66GY8WQQDdn458hDaGJ0DAjN2vZEY=
+			</data>
+		</dict>
+		<key>Frameworks/objective_c.framework/objective_c</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/7LFnldcEvPnlVEdoy2/zaRQ3HJXWFn69J8DnUm8p/Y=
+			</data>
+		</dict>
 		<key>Runner.debug.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aq7KMLbeHbHUDihrqHnI4GNPj1G2VtjZguAbI0xVvjQ=
+			8oq9a96VbhCNcGmnR7RIe1L23IQ/lIPgESmyFPLweAc=
 			</data>
 		</dict>
 		<key>__preview.dylib</key>
