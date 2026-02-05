@@ -25,6 +25,12 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void deleteTask(int index) {
+    setState(() {
+      todoList.removeAt(index);
+    });
+  }
+
   void saveNewTask() {
     final text = controller.text.trim();
     if (text.isEmpty) return;
@@ -90,10 +96,31 @@ void createNewTask(){
       body: ListView.builder(
         itemCount: todoList.length,
         itemBuilder: (context, index) {
-          return ToDoTile(
-            taskName: todoList[index][0],
-            taskCompleted: todoList[index][1],
-            onChanged: (value) => checkBoxChanged(value, index),
+          return Dismissible(
+            key: ValueKey(todoList[index][0] + index.toString()),
+            direction: DismissDirection.endToStart,
+            background: Container(
+              alignment: Alignment.centerRight,
+              padding: const EdgeInsets.only(right: 20),
+              margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Icon(
+                Icons.delete,
+                color: Colors.white,
+                size: 30,
+              ),
+            ),
+            onDismissed: (direction) {
+              deleteTask(index);
+            },
+            child: ToDoTile(
+              taskName: todoList[index][0],
+              taskCompleted: todoList[index][1],
+              onChanged: (value) => checkBoxChanged(value, index),
+            ),
           );
         },
       ),
