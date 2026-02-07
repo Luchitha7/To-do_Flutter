@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    // if there is no data, create initial data
+    // If there is no data, create initial data
     if (db.myBox.get("TODOLIST") == null) {
       db.createInitialData();
       db.updateDatabase();

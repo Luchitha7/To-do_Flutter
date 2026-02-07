@@ -4,10 +4,10 @@ class ToDoDatabase {
   // list of todo tasks in memory
   List todoList = [];
 
-  // reference to the Hive box (already opened in main)
+  // reference to the Hive box
   final Box myBox = Hive.box('myBox');
 
-  // run this if it's the first time ever opening the app
+  
   void createInitialData() {
     todoList = [
       ["Buy groceries", false],
