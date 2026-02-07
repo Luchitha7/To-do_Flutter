@@ -20,15 +20,23 @@ A beautiful, modern, and feature-rich To-Do application built with Flutter. Stay
 ## 📸 App Preview
 
 ### Landing Page
+![Landing Page](screenshots/landing.png)
 - Animated logo with fade-in and scale effects
 - Auto-navigation to home page after 3 seconds
 - Tap anywhere to skip and go directly to tasks
 
 ### Home Page
+![Home Page](screenshots/home.png)
 - Clean list view of all your tasks
-- Blue-themed UI matching your brand
+- Blue-themed UI
 - Floating action button for quick task creation
 - Swipe right-to-left to reveal delete option with red background
+
+### New Task
+![New Task](screenshots/new_task.png)
+
+### Code
+![Code](screenshots/code.png)
 
 ## 🚀 Getting Started
 
@@ -94,6 +102,12 @@ lib/
 assets/
 └── images/
     └── logo.png              # App logo
+
+screenshots/                  # Screenshots for README
+├── landing.png
+├── home.png
+├── new_task.png              # New task screen
+└── code.png                  # Code screenshot
 ```
 
 ## 🛠️ Technologies Used
